@@ -1,4 +1,4 @@
-# KinderConnect - Eine soziale Plattform für Eltern
+# ActiveKids - Eine soziale Plattform für Eltern
 
 ## Projektübersicht
 
