@@ -2,7 +2,7 @@
 
 ## Projektübersicht
 
-**KinderConnect** ist eine React-basierte Anwendung, die Eltern dabei unterstützt, Spielkameraden für ihre Kinder zu finden, gemeinsame Hobbys zu entdecken und über bevorstehende Veranstaltungen oder Aktivitäten informiert zu bleiben. Die App zielt darauf ab, soziale Interaktionen unter Kindern zu fördern und es Eltern zu erleichtern, sich zu vernetzen und an gemeinschaftlichen Aktivitäten teilzunehmen.
+**ActiveKids** ist eine React-basierte Anwendung, die Eltern dabei unterstützt, Spielkameraden für ihre Kinder zu finden, gemeinsame Hobbys zu entdecken und über bevorstehende Veranstaltungen oder Aktivitäten informiert zu bleiben. Die App zielt darauf ab, soziale Interaktionen unter Kindern zu fördern und es Eltern zu erleichtern, sich zu vernetzen und an gemeinschaftlichen Aktivitäten teilzunehmen.
 
 ## Funktionen
 
