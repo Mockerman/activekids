@@ -68,4 +68,4 @@
    - Vorbereitung der App auf Mehrsprachigkeit, um eine breitere Nutzerbasis anzusprechen.
    - Implementierung eines Sprachwechsels, der es Eltern ermöglicht, die App in ihrer bevorzugten Sprache zu nutzen.
 
-Mit diesen Ideen und Funktionen soll **KinderConnect** eine benutzerfreundliche und sichere Plattform bieten, die das soziale Leben von Kindern bereichert und Eltern bei der Organisation und Vernetzung unterstützt.
+Mit diesen Ideen und Funktionen soll **ActiveKids** eine benutzerfreundliche und sichere Plattform bieten, die das soziale Leben von Kindern bereichert und Eltern bei der Organisation und Vernetzung unterstützt.
