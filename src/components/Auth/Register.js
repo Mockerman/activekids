@@ -39,6 +39,7 @@ const Register = () => {
         },
         inviteCode
       });
+      console.log('Registration response:', response); // Ausgabe der gesamten Antwort
       localStorage.setItem('token', response.data.token);
       window.location.href = '/dashboard';
     } catch (err) {
