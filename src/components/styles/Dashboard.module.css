@@ -1,0 +1,52 @@
+.dashboardContainer {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .content {
+    margin-left: 260px;
+    padding: 80px 20px 20px;
+    flex-grow: 1;
+    background-color: #f5f5f5;
+  }
+  
+  .title {
+    color: #4caf50;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .sectionTitle {
+    color: #ff5722;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .listItem {
+    margin-bottom: 10px;
+  }
+  
+  .activityLink {
+    text-decoration: none;
+    color: #4caf50;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .activityLink:hover {
+    color: #388e3c;
+  }
+  

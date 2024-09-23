@@ -1,0 +1,30 @@
+.sidebar {
+    width: 240px;
+    background-color: #4caf50;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  
+  .sidebarList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebarLink {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebarLink:hover {
+    background-color: #388e3c;
+  }
+  

@@ -1,0 +1,79 @@
+/* src/components/styles/ProfileDashboard.module.css */
+
+.profileDashboard {
+    margin-left: 260px;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .title {
+    color: #4caf50;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .profileList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .profileItem {
+    background-color: rgba(76, 175, 80, 0.1); /* Halbtransparenter grüner Hintergrund */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profileItem div {
+    margin-top: 10px;
+  }
+  
+  .buttonsContainer {
+    margin-top: 15px;
+  }
+  
+  .editButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .editButton:hover {
+    background-color: #388e3c;
+  }
+  
+  .deleteButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+  }
+  
+  .deleteButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  .addButton {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .addButton:hover {
+    background-color: #e64a19;
+  }
+  
