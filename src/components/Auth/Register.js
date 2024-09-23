@@ -31,10 +31,12 @@ const Register = () => {
         email,
         password,
         childrenCount: Number(childrenCount),
-        street: address.street,
-        houseNumber: address.houseNumber,
-        postalCode: address.postalCode,
-        city: address.city,
+        address: {
+          street: address.street,
+          houseNumber: address.houseNumber,
+          postalCode: address.postalCode,
+          city: address.city
+        },
         inviteCode
       });
       localStorage.setItem('token', response.data.token);

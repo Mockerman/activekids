@@ -4,6 +4,7 @@ import ProfileEditor from './ProfileEditor';
 import styles from '../styles/ProfileDashboard.module.css'; // Importing CSS Module
 import Navbar from '../Layout/Navbar';
 import Sidebar from '../Layout/Sidebar';
+import { getUserIdFromToken } from '../Auth/tokenUtils';
 
 const ProfileDashboard = () => {
   const [children, setChildren] = useState([]);
@@ -16,7 +17,8 @@ const ProfileDashboard = () => {
 
   const fetchChildren = async () => {
     try {
-      const res = await API.get('/child');
+      const userId = getUserIdFromToken(); // Benutzer-ID abrufen
+      const res = await API.get(`/child?userId=${userId}`); // Benutzer-ID als Query-Parameter übergeben
       setChildren(res.data);
     } catch (error) {
       console.error('Error fetching children:', error);
