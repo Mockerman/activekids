@@ -1,0 +1,110 @@
+/* src/components/styles/ClubDashboard.module.css */
+
+.clubDashboard {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+  }
+  
+  .title {
+    color: #4caf50;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .clubList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .clubItem {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .clubItem h3 {
+    color: #333;
+  }
+  
+  .clubLogo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .socialMedia a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #4caf50;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .socialMedia a:hover {
+    color: #388e3c;
+  }
+  
+  .buttonContainer {
+    margin-top: 15px;
+  }
+  
+  .saveButton, .cancelButton, .editButton, .deleteButton, .addButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+  }
+  
+  .saveButton:hover, .editButton:hover, .addButton:hover {
+    background-color: #388e3c;
+  }
+  
+  .deleteButton {
+    background-color: #f44336;
+  }
+  
+  .deleteButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  .cancelButton {
+    background-color: #f44336;
+  }
+  
+  .cancelButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 100px;
+  }
+  
+  .socialMediaInputs {
+    display: flex;
+    gap: 10px;
+  }
+  

@@ -1,0 +1,56 @@
+/* src/components/styles/Register.module.css */
+
+.formContainer {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 500px;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formTitle {
+    font-size: 1.8rem;
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .errorMessage {
+    color: #f44336;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submitButton:hover {
+    background-color: #388e3c;
+  }
+  
+  @media (max-width: 600px) {
+    .formContainer {
+      padding: 15px;
+      max-width: 90%;
+    }
+  }
+  
