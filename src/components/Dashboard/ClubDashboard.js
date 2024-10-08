@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import API from '../../services/api';
 import styles from '../styles/ClubDashboard.module.css'; // Import CSS
+import Navbar from '../Layout/Navbar';
+import Sidebar from '../Layout/Sidebar';
+
 
 const ClubDashboard = () => {
   const [clubs, setClubs] = useState([]);
@@ -47,16 +50,47 @@ const ClubDashboard = () => {
   };
 
   const handleSaveClub = async () => {
-    if (selectedClub._id) {
-      // Update existing club
-      await API.put(`/club/${selectedClub._id}`, selectedClub);
-    } else {
-      // Create new club
-      await API.post('/club', selectedClub);
+    try {
+      const formData = new FormData();
+  
+      formData.append('name', selectedClub.name);
+      formData.append('description', selectedClub.description);
+      formData.append('offers', selectedClub.offers);
+  
+      // Sende nur die Stadt als `location`
+      formData.append('location', selectedClub.location); // Nur die Stadt als String
+  
+      formData.append('socialMedia', JSON.stringify(selectedClub.socialMedia)); // Social Media als JSON
+  
+      if (selectedClub.logo) {
+        formData.append('logo', selectedClub.logo);
+      }
+  
+      if (selectedClub._id) {
+        // Update existing club
+        await API.put(`/club/${selectedClub._id}`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+      } else {
+        // Create new club
+        await API.post('/club', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+      }
+  
+      setIsEditing(false);
+      fetchClubs(); // Refresh the list of clubs after saving
+    } catch (error) {
+      console.error('Error saving club:', error);
     }
-    setIsEditing(false);
-    fetchClubs(); // Refresh the list of clubs
   };
+  
+  
+  
 
   const handleDeleteClub = async (clubId) => {
     if (window.confirm('Bist du sicher, dass du diesen Verein löschen möchtest?')) {
@@ -67,6 +101,8 @@ const ClubDashboard = () => {
 
   return (
     <div className={styles.clubDashboard}>
+                  <Navbar />
+                  <Sidebar />
       <h2 className={styles.title}>Vereine verwalten</h2>
       {isEditing ? (
         <div className={styles.clubEditor}>
@@ -103,7 +139,7 @@ const ClubDashboard = () => {
           <div className={styles.socialMediaInputs}>
             <input
               type="text"
-              placeholder="Facebook"
+              placeholder="Facebook Link"
               value={selectedClub.socialMedia.facebook}
               onChange={(e) => setSelectedClub({
                 ...selectedClub,
@@ -113,7 +149,7 @@ const ClubDashboard = () => {
             />
             <input
               type="text"
-              placeholder="Instagram"
+              placeholder="Instagram Link"
               value={selectedClub.socialMedia.instagram}
               onChange={(e) => setSelectedClub({
                 ...selectedClub,
@@ -123,7 +159,7 @@ const ClubDashboard = () => {
             />
             <input
               type="text"
-              placeholder="Twitter"
+              placeholder="Website Link"
               value={selectedClub.socialMedia.twitter}
               onChange={(e) => setSelectedClub({
                 ...selectedClub,
@@ -144,26 +180,35 @@ const ClubDashboard = () => {
         </div>
       ) : (
         <>
-          <ul className={styles.clubList}>
-            {clubs.map((club) => (
-              <li key={club._id} className={styles.clubItem}>
-                <img src={club.logo} alt={`${club.name} Logo`} className={styles.clubLogo} />
-                <h3>{club.name}</h3>
-                <p>{club.description}</p>
-                <p><strong>Angebote:</strong> {club.offers}</p>
-                <p><strong>Standort:</strong> {club.location}</p>
-                <div className={styles.socialMedia}>
-                  <a href={club.socialMedia?.facebook || '#'} target="_blank" rel="noopener noreferrer">Facebook</a>
-                  <a href={club.socialMedia?.instagram || '#'} target="_blank" rel="noopener noreferrer">Instagram</a>
-                  <a href={club.socialMedia?.twitter || '#'} target="_blank" rel="noopener noreferrer">Twitter</a>
-                </div>
-                <div className={styles.buttonContainer}>
-                  <button onClick={() => handleEditClub(club)} className={styles.editButton}>Bearbeiten</button>
-                  <button onClick={() => handleDeleteClub(club._id)} className={styles.deleteButton}>Löschen</button>
-                </div>
-              </li>
-            ))}
-          </ul>
+<ul className={styles.clubList}>
+  {clubs.map((club) => (
+    <li key={club._id} className={styles.clubItem}>
+      <img src={`${process.env.REACT_APP_BACKEND_URL}/uploads/${club.logo}`} alt={`${club.name} Logo`} className={styles.clubLogo} />
+      <h3>{club.name}</h3>
+      <p>{club.description}</p>
+      <p><strong>Angebote:</strong> {club.offers}</p>
+      <p><strong>Standort:</strong> {club.location}</p>
+
+      <div className={styles.socialMedia}>
+        {club.socialMedia?.facebook && (
+          <a href={club.socialMedia.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
+        )}
+        {club.socialMedia?.instagram && (
+          <a href={club.socialMedia.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
+        )}
+        {club.socialMedia?.twitter && (
+          <a href={club.socialMedia.twitter} target="_blank" rel="noopener noreferrer">Website</a>
+        )}
+      </div>
+
+      <div className={styles.buttonContainer}>
+        <button onClick={() => handleEditClub(club)} className={styles.editButton}>Bearbeiten</button>
+        <button onClick={() => handleDeleteClub(club._id)} className={styles.deleteButton}>Löschen</button>
+      </div>
+    </li>
+  ))}
+</ul>
+
           <button onClick={handleNewClub} className={styles.addButton}>Neuen Verein hinzufügen</button>
         </>
       )}
