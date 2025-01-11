@@ -17,7 +17,11 @@ const Sidebar = () => {
           <Link to="/club" className={styles.sidebarLink}>Vereine verwalten</Link>
         </li>
         <li>
-          <Link to="/activity" className={styles.sidebarLink}>Aktivitäten</Link>
+          <Link to="/event" className={styles.sidebarLink}>Events verwalten</Link>
+        </li>
+        <li>
+          <Link to="/activity" className={styles.sidebarLink}>Aktivitäten verwalten</Link>
+
         </li>
         <li>
           <Link to="/carpool" className={styles.sidebarLink}>Fahrgemeinschaften</Link>

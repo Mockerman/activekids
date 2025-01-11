@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import API from '../../services/api';
 import styles from '../styles/Dashboard.module.css';
 import Navbar from '../Layout/Navbar';
@@ -35,23 +34,19 @@ const MainDashboard = () => {
           <h3 className={styles.sectionTitle}>Aktuelle Events</h3>
           <ul className={styles.list}>
             {events.map((event) => (
-              <li key={event._id} className={styles.listItem}>{event.title}</li>
+              <li key={event._id} className={styles.listItem}>
+              {event.name} - {new Date(event.date).toLocaleDateString()}
+            </li>
             ))}
           </ul>
         </div>
 
         <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>Gemeinsame Aktivitäten</h3>
+          <h3 className={styles.sectionTitle}>Aktuelle Aktivitäten</h3>
           <ul className={styles.list}>
             {activities.map((activity) => (
               <li key={activity._id} className={styles.listItem}>
-                {activity.title} - {new Date(activity.date).toLocaleDateString()}
-                <br />
-                Ort: {activity.location}
-                <br />
-                <Link to={`/activity/${activity._id}`} className={styles.activityLink}>
-                  Details ansehen
-                </Link>
+                {activity.name} - {new Date(activity.date).toLocaleDateString()}
               </li>
             ))}
           </ul>
